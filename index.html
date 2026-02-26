@@ -1,0 +1,1491 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="title" content="tailcode.ai" />
+        <meta name="description" content="Your AI on-call engineer for incident resolution." />
+        <title>tailcode.ai</title>
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://localhost:3000" />
+        <meta property="og:title" content="tailcode.ai" />
+        <meta property="og:description" content="Your AI on-call engineer for incident resolution." />
+        <meta property="og:image" content="http://localhost:3000/static/og-image.png" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="http://localhost:3000" />
+        <meta property="twitter:title" content="tailcode.ai" />
+        <meta property="twitter:description" content="Your AI on-call engineer for incident resolution." />
+        <meta property="twitter:image" content="http://localhost:3000/static/og-image.png" />
+        <link rel="stylesheet" href="/static/styles.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;display=swap"
+        />
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+        <script src="/static/tailwind-elements.js" type="module" defer></script>
+        <script src="/static/htmx.js" defer></script>
+    </head>
+    <body id="body">
+        <iframe name="hiddenIframe" class="hidden"></iframe>
+        <header class="sticky top-0 z-10 bg-olive-100 dark:bg-olive-950" id="navbar">
+            <style>
+                :root {
+                    --scroll-padding-top: 5.25rem;
+                }
+            </style>
+            <nav>
+                <div class="mx-auto flex h-(--scroll-padding-top) max-w-7xl items-center gap-4 px-6 lg:px-10">
+                    <div class="flex flex-1 items-center">
+                        <a
+                            href="/"
+                            class="inline-flex items-stretch font-display text-2xl text-olive-950 dark:text-white"
+                            hx-boost="true"
+                            >tailcode.ai</a
+                        >
+                    </div>
+                    <div class="flex gap-8 max-lg:hidden">
+                        <a
+                            href="#how-it-works"
+                            class="group inline-flex items-center justify-between gap-2 text-3xl/10 font-medium text-olive-950 lg:text-sm/7 dark:text-white"
+                        >
+                            How it works?
+                            <span
+                                class="inline-flex p-1.5 opacity-0 group-hover:opacity-100 lg:hidden"
+                                aria-hidden="true"
+                            >
+                                <svg
+                                    fill="none"
+                                    viewbox="0 0 24 24"
+                                    stroke-width="1.5"
+                                    stroke="currentColor"
+                                    class="size-6"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                                    ></path>
+                                </svg>
+                            </span>
+                        </a>
+                        <a
+                            href="#features"
+                            class="group inline-flex items-center justify-between gap-2 text-3xl/10 font-medium text-olive-950 lg:text-sm/7 dark:text-white"
+                        >
+                            Features
+                            <span
+                                class="inline-flex p-1.5 opacity-0 group-hover:opacity-100 lg:hidden"
+                                aria-hidden="true"
+                            >
+                                <svg
+                                    fill="none"
+                                    viewbox="0 0 24 24"
+                                    stroke-width="1.5"
+                                    stroke="currentColor"
+                                    class="size-6"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                                    ></path>
+                                </svg>
+                            </span>
+                        </a>
+                        <a
+                            href="#why-us"
+                            class="group inline-flex items-center justify-between gap-2 text-3xl/10 font-medium text-olive-950 lg:text-sm/7 dark:text-white"
+                        >
+                            Why us?
+                            <span
+                                class="inline-flex p-1.5 opacity-0 group-hover:opacity-100 lg:hidden"
+                                aria-hidden="true"
+                            >
+                                <svg
+                                    fill="none"
+                                    viewbox="0 0 24 24"
+                                    stroke-width="1.5"
+                                    stroke="currentColor"
+                                    class="size-6"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                                    ></path>
+                                </svg>
+                            </span>
+                        </a>
+                        <a
+                            href="#faqs"
+                            class="group inline-flex items-center justify-between gap-2 text-3xl/10 font-medium text-olive-950 lg:text-sm/7 dark:text-white"
+                        >
+                            FAQs
+                            <span
+                                class="inline-flex p-1.5 opacity-0 group-hover:opacity-100 lg:hidden"
+                                aria-hidden="true"
+                            >
+                                <svg
+                                    fill="none"
+                                    viewbox="0 0 24 24"
+                                    stroke-width="1.5"
+                                    stroke="currentColor"
+                                    class="size-6"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                                    ></path>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="flex flex-1 items-center justify-end gap-4">
+                        <div class="flex shrink-0 items-center gap-5"></div>
+                        <button
+                            command="show-modal"
+                            commandfor="mobile-menu"
+                            aria-label="Toggle menu"
+                            class="inline-flex rounded-full p-1.5 text-olive-950 hover:bg-olive-950/10 lg:hidden dark:text-white dark:hover:bg-white/10"
+                        >
+                            <svg viewbox="0 0 24 24" fill="currentColor" class="size-6">
+                                <path
+                                    fillrule="evenodd"
+                                    d="M3.748 8.248a.75.75 0 0 1 .75-.75h15a.75.75 0 0 1 0 1.5h-15a.75.75 0 0 1-.75-.75ZM3.748 15.75a.75.75 0 0 1 .75-.751h15a.75.75 0 0 1 0 1.5h-15a.75.75 0 0 1-.75-.75Z"
+                                    cliprule="evenodd"
+                                ></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <el-dialog id="mobile-menu-dialog" class="lg:hidden">
+                    <dialog id="mobile-menu" class="backdrop:bg-transparent">
+                        <el-dialog-panel class="fixed inset-0 bg-olive-100 px-6 py-6 lg:px-10 dark:bg-olive-950">
+                            <div class="flex justify-end">
+                                <button
+                                    command="close"
+                                    commandfor="mobile-menu"
+                                    aria-label="Toggle menu"
+                                    class="inline-flex rounded-full p-1.5 text-olive-950 hover:bg-olive-950/10 dark:text-white dark:hover:bg-white/10"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewbox="0 0 24 24"
+                                        stroke-width="1.5"
+                                        stroke="currentColor"
+                                        class="size-6"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M6 18 18 6M6 6l12 12"
+                                        ></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="mt-6 flex flex-col gap-6">
+                                <a
+                                    href="#how-it-works"
+                                    onclick="document.getElementById(&#39;mobile-menu-dialog&#39;).hide()"
+                                    class="group inline-flex items-center justify-between gap-2 text-3xl/10 font-medium text-olive-950 lg:text-sm/7 dark:text-white"
+                                >
+                                    How it works?
+                                    <span
+                                        class="inline-flex p-1.5 opacity-0 group-hover:opacity-100 lg:hidden"
+                                        aria-hidden="true"
+                                    >
+                                        <svg
+                                            fill="none"
+                                            viewbox="0 0 24 24"
+                                            stroke-width="1.5"
+                                            stroke="currentColor"
+                                            class="size-6"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                                            ></path>
+                                        </svg>
+                                    </span>
+                                </a>
+                                <a
+                                    href="#features"
+                                    onclick="document.getElementById(&#39;mobile-menu-dialog&#39;).hide()"
+                                    class="group inline-flex items-center justify-between gap-2 text-3xl/10 font-medium text-olive-950 lg:text-sm/7 dark:text-white"
+                                >
+                                    Features
+                                    <span
+                                        class="inline-flex p-1.5 opacity-0 group-hover:opacity-100 lg:hidden"
+                                        aria-hidden="true"
+                                    >
+                                        <svg
+                                            fill="none"
+                                            viewbox="0 0 24 24"
+                                            stroke-width="1.5"
+                                            stroke="currentColor"
+                                            class="size-6"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                                            ></path>
+                                        </svg>
+                                    </span>
+                                </a>
+                                <a
+                                    href="#why-us"
+                                    onclick="document.getElementById(&#39;mobile-menu-dialog&#39;).hide()"
+                                    class="group inline-flex items-center justify-between gap-2 text-3xl/10 font-medium text-olive-950 lg:text-sm/7 dark:text-white"
+                                >
+                                    Why us?
+                                    <span
+                                        class="inline-flex p-1.5 opacity-0 group-hover:opacity-100 lg:hidden"
+                                        aria-hidden="true"
+                                    >
+                                        <svg
+                                            fill="none"
+                                            viewbox="0 0 24 24"
+                                            stroke-width="1.5"
+                                            stroke="currentColor"
+                                            class="size-6"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                                            ></path>
+                                        </svg>
+                                    </span>
+                                </a>
+                                <a
+                                    href="#faqs"
+                                    onclick="document.getElementById(&#39;mobile-menu-dialog&#39;).hide()"
+                                    class="group inline-flex items-center justify-between gap-2 text-3xl/10 font-medium text-olive-950 lg:text-sm/7 dark:text-white"
+                                >
+                                    FAQs
+                                    <span
+                                        class="inline-flex p-1.5 opacity-0 group-hover:opacity-100 lg:hidden"
+                                        aria-hidden="true"
+                                    >
+                                        <svg
+                                            fill="none"
+                                            viewbox="0 0 24 24"
+                                            stroke-width="1.5"
+                                            stroke="currentColor"
+                                            class="size-6"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                                            ></path>
+                                        </svg>
+                                    </span>
+                                </a>
+                            </div>
+                        </el-dialog-panel>
+                    </dialog>
+                </el-dialog>
+            </nav>
+        </header>
+        <main class="isolate overflow-clip">
+            <section class="flex flex-col gap-16 px-2 pb-16" id="hero">
+                <div
+                    class="rounded-lg relative overflow-hidden bg-linear-to-b from-[#9ca88f] to-[#596352] dark:from-[#333a2b] dark:to-[#26361b]"
+                >
+                    <div
+                        class="absolute inset-0 opacity-30 mix-blend-overlay dark:opacity-25"
+                        style="
+                            background-position: center;
+                            background-image: url(&quot;data:image/svg+xml;charset=utf-8,%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22250%22%20height%3D%22250%22%20viewBox%3D%220%200%20100%20100%22%3E%20%3Cfilter%20id%3D%22n%22%3E%20%3CfeTurbulence%20type%3D%22turbulence%22%20baseFrequency%3D%221.4%22%20numOctaves%3D%221%22%20seed%3D%222%22%20stitchTiles%3D%22stitch%22%20result%3D%22n%22%20%2F%3E%20%3CfeComponentTransfer%20result%3D%22g%22%3E%20%3CfeFuncR%20type%3D%22linear%22%20slope%3D%224%22%20intercept%3D%221%22%20%2F%3E%20%3CfeFuncG%20type%3D%22linear%22%20slope%3D%224%22%20intercept%3D%221%22%20%2F%3E%20%3CfeFuncB%20type%3D%22linear%22%20slope%3D%224%22%20intercept%3D%221%22%20%2F%3E%20%3C%2FfeComponentTransfer%3E%20%3CfeColorMatrix%20type%3D%22saturate%22%20values%3D%220%22%20in%3D%22g%22%20%2F%3E%20%3C%2Ffilter%3E%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23n)%22%20%2F%3E%20%3C%2Fsvg%3E%20&quot;);
+                        "
+                    ></div>
+                    <div class="relative">
+                        <div class="-mx-2 sm:px-6 md:px-12 lg:px-0">
+                            <div
+                                class="mx-auto w-full max-w-2xl px-6 md:max-w-3xl lg:max-w-7xl lg:px-10 flex flex-col gap-16"
+                            >
+                                <div class="flex gap-x-10 gap-y-16 max-lg:flex-col sm:gap-y-24">
+                                    <div
+                                        class="flex shrink-0 flex-col items-start gap-6 pt-16 sm:pt-32 lg:basis-2xl lg:py-40"
+                                    >
+                                        <h1
+                                            class="font-display text-5xl/12 tracking-tight text-balance sm:text-[5rem]/20 text-white max-w-5xl"
+                                        >
+                                            Your AI on-call engineer for incident resolution.
+                                        </h1>
+                                        <div class="flex max-w-3xl flex-col gap-4 text-lg/8 text-white/70">
+                                            <p>
+                                                Automatically gathers logs, metrics, alerts, and deployments to deliver
+                                                instant RCA and next steps. Right where your team works.
+                                            </p>
+                                        </div>
+                                        <form
+                                            action="https://docs.google.com/forms/d/e/1FAIpQLSejxi-URdn5o_kE7R1vqSHTi49nu_jPaM_ahkZAhtKifdUDMw/formResponse"
+                                            method="POST"
+                                            target="hiddenIframe"
+                                            class="flex rounded-full p-1 inset-ring-1 dark:bg-white/10 dark:inset-ring-white/10 bg-white/15 inset-ring-white/10"
+                                            onsubmit="setTimeout(() => this.reset(), 500)"
+                                        >
+                                            <input
+                                                name="entry.1343145133"
+                                                class="min-w-0 flex-1 px-3 text-sm/7 focus:outline-hidden dark:text-white text-white placeholder:text-white/60"
+                                                type="email"
+                                                aria-label="Email address"
+                                                placeholder="Enter your email"
+                                                autocomplete="email"
+                                            />
+                                            <button
+                                                type="submit"
+                                                class="inline-flex shrink-0 items-center justify-center gap-1 rounded-full text-sm/7 font-medium hover bg-white text-olive-950 hover:bg-olive-100 dark:bg-olive-100 dark:hover:bg-white px-3 py-1"
+                                            >
+                                                Request invite
+                                                <svg
+                                                    width="13"
+                                                    height="7"
+                                                    viewbox="0 0 13 7"
+                                                    fill="none"
+                                                    stroke-width="1"
+                                                    role="image"
+                                                    class="inline-block"
+                                                >
+                                                    <path
+                                                        d="M12.5049 3.49512L0.504883 3.49512"
+                                                        stroke="currentColor"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                    ></path>
+                                                    <path
+                                                        d="M9.5 6.5L12.5 3.5L9.5 0.5"
+                                                        stroke="currentColor"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                    ></path>
+                                                </svg>
+                                            </button>
+                                        </form>
+                                    </div>
+                                    <div class="lg:pt-24">
+                                        <div class="relative h-72 sm:h-92 md:h-125 lg:size-full">
+                                            <div
+                                                class="absolute inset-y-0 left-0 flex overflow-hidden *:h-full *:w-auto *:max-w-none rounded-t-lg bg-olive-100 dark:bg-olive-950"
+                                            >
+                                                <img
+                                                    class="bg-white/75 md:hidden dark:hidden"
+                                                    src="/static/dashboard-light-900.webp"
+                                                    alt=""
+                                                    width="2994"
+                                                    height="1500"
+                                                />
+                                                <img
+                                                    class="bg-black/75 not-dark:hidden md:hidden"
+                                                    src="/static/dashboard-dark-900.webp"
+                                                    alt=""
+                                                    width="2994"
+                                                    height="1500"
+                                                />
+                                                <img
+                                                    class="bg-white/75 max-md:hidden lg:hidden dark:hidden"
+                                                    src="/static/dashboard-light-1200.webp"
+                                                    alt=""
+                                                    width="2994"
+                                                    height="1500"
+                                                />
+                                                <img
+                                                    class="bg-black/75 not-dark:hidden max-md:hidden lg:hidden"
+                                                    src="/static/dashboard-dark-1200.webp"
+                                                    alt=""
+                                                    width="2994"
+                                                    height="1500"
+                                                />
+                                                <img
+                                                    class="bg-white/75 max-lg:hidden dark:hidden"
+                                                    src="/static/dashboard-light-1500.webp"
+                                                    alt=""
+                                                    width="2994"
+                                                    height="1500"
+                                                />
+                                                <img
+                                                    class="bg-black/75 not-dark:hidden max-lg:hidden"
+                                                    src="/static/dashboard-dark-1500.webp"
+                                                    alt=""
+                                                    width="2994"
+                                                    height="1500"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mx-auto w-full max-w-2xl px-6 md:max-w-3xl lg:max-w-7xl lg:px-10"></div>
+            </section>
+            <section class="py-16" id="how-it-works">
+                <div
+                    class="mx-auto w-full max-w-2xl px-6 md:max-w-3xl lg:max-w-7xl lg:px-10 flex flex-col gap-10 sm:gap-16"
+                >
+                    <div class="flex max-w-2xl flex-col gap-6">
+                        <div class="flex flex-col gap-2">
+                            <h2
+                                class="font-display text-[2rem]/10 tracking-tight text-pretty text-olive-950 sm:text-5xl/14 dark:text-white"
+                            >
+                                From alert to answer.
+                            </h2>
+                        </div>
+                        <div class="text-olive-700 dark:text-olive-400 text-pretty">
+                            <p>
+                                No tool-hopping. No missing context. Just clear answers and next steps right where your
+                                team already works.
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="grid grid-cols-1 gap-6">
+                            <div
+                                class="group grid grid-flow-dense grid-cols-1 gap-2 rounded-lg bg-olive-950/2.5 p-2 lg:grid-cols-2 dark:bg-white/5"
+                            >
+                                <div
+                                    class="flex flex-col justify-between gap-6 p-6 sm:gap-10 sm:p-10 lg:p-6 lg:group-even:col-start-2"
+                                >
+                                    <div class="text-xl/8 sm:text-2xl/9">
+                                        <h3 class="text-olive-950 dark:text-white">Alert triggers our AI agent.</h3>
+                                        <div class="flex flex-col gap-4 text-olive-500">
+                                            <p>
+                                                When an alert fires, our AI agent automatically gathers logs, metrics,
+                                                alerts, and recent deploys. No manual digging. No tool switching.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="relative overflow-hidden rounded-sm lg:group-even:col-start-1 dark:after:absolute dark:after:inset-0 dark:after:rounded-sm dark:after:outline-1 dark:after:-outline-offset-1 dark:after:outline-white/10"
+                                >
+                                    <div
+                                        class="relative overflow-hidden bg-linear-to-b from-[#637c86] to-[#778599] dark:from-[#243a42] dark:to-[#232f40]"
+                                    >
+                                        <div
+                                            class="absolute inset-0 opacity-30 mix-blend-overlay dark:opacity-25"
+                                            style="
+                                                background-position: center;
+                                                background-image: url(&quot;data:image/svg+xml;charset=utf-8,%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22250%22%20height%3D%22250%22%20viewBox%3D%220%200%20100%20100%22%3E%20%3Cfilter%20id%3D%22n%22%3E%20%3CfeTurbulence%20type%3D%22turbulence%22%20baseFrequency%3D%221.4%22%20numOctaves%3D%221%22%20seed%3D%222%22%20stitchTiles%3D%22stitch%22%20result%3D%22n%22%20%2F%3E%20%3CfeComponentTransfer%20result%3D%22g%22%3E%20%3CfeFuncR%20type%3D%22linear%22%20slope%3D%224%22%20intercept%3D%221%22%20%2F%3E%20%3CfeFuncG%20type%3D%22linear%22%20slope%3D%224%22%20intercept%3D%221%22%20%2F%3E%20%3CfeFuncB%20type%3D%22linear%22%20slope%3D%224%22%20intercept%3D%221%22%20%2F%3E%20%3C%2FfeComponentTransfer%3E%20%3CfeColorMatrix%20type%3D%22saturate%22%20values%3D%220%22%20in%3D%22g%22%20%2F%3E%20%3C%2Ffilter%3E%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23n)%22%20%2F%3E%20%3C%2Fsvg%3E%20&quot;);
+                                            "
+                                        ></div>
+                                        <div class="relative">
+                                            <div
+                                                class="relative [--padding:min(10%,--spacing(16))] pt-(--padding) pl-(--padding)"
+                                            >
+                                                <div class="*:relative *:ring-1 *:ring-black/10 *:rounded-tl-sm">
+                                                    <img
+                                                        src="/static/alert-received-light-736.webp"
+                                                        alt=""
+                                                        class="bg-white/75 sm:hidden dark:hidden"
+                                                        width="1312"
+                                                        height="736"
+                                                    />
+                                                    <img
+                                                        src="/static/alert-received-dark-736.webp"
+                                                        alt=""
+                                                        class="bg-black/75 not-dark:hidden sm:hidden"
+                                                        width="1312"
+                                                        height="736"
+                                                    />
+                                                    <img
+                                                        src="/static/alert-received-light-680.webp"
+                                                        alt=""
+                                                        class="bg-white/75 max-sm:hidden lg:hidden dark:hidden"
+                                                        width="1312"
+                                                        height="680"
+                                                    />
+                                                    <img
+                                                        src="/static/alert-received-dark-680.webp"
+                                                        alt=""
+                                                        class="bg-black/75 not-dark:hidden max-sm:hidden lg:hidden"
+                                                        width="1312"
+                                                        height="680"
+                                                    />
+                                                    <img
+                                                        src="/static/alert-received-light-1240.webp"
+                                                        alt=""
+                                                        class="bg-white/75 max-lg:hidden dark:hidden"
+                                                        width="1312"
+                                                        height="1240"
+                                                    />
+                                                    <img
+                                                        src="/static/alert-received-dark-1240.webp"
+                                                        alt=""
+                                                        class="bg-black/75 not-dark:hidden max-lg:hidden"
+                                                        width="1312"
+                                                        height="1240"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="group grid grid-flow-dense grid-cols-1 gap-2 rounded-lg bg-olive-950/2.5 p-2 lg:grid-cols-2 dark:bg-white/5"
+                            >
+                                <div
+                                    class="flex flex-col justify-between gap-6 p-6 sm:gap-10 sm:p-10 lg:p-6 lg:group-even:col-start-2"
+                                >
+                                    <div class="text-xl/8 sm:text-2xl/9">
+                                        <h3 class="text-olive-950 dark:text-white">
+                                            Signals are analyzed and correlated.
+                                        </h3>
+                                        <div class="flex flex-col gap-4 text-olive-500">
+                                            <p>
+                                                Signals across your observability and CI/CD stack are analyzed and
+                                                correlated to reconstruct the incident, identify the root cause, and
+                                                explain what went wrong.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="relative overflow-hidden rounded-sm lg:group-even:col-start-1 dark:after:absolute dark:after:inset-0 dark:after:rounded-sm dark:after:outline-1 dark:after:-outline-offset-1 dark:after:outline-white/10"
+                                >
+                                    <div
+                                        class="relative overflow-hidden bg-linear-to-b from-[#7b627d] to-[#8f6976] dark:from-[#412c42] dark:to-[#3c1a26]"
+                                    >
+                                        <div
+                                            class="absolute inset-0 opacity-30 mix-blend-overlay dark:opacity-25"
+                                            style="
+                                                background-position: center;
+                                                background-image: url(&quot;data:image/svg+xml;charset=utf-8,%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22250%22%20height%3D%22250%22%20viewBox%3D%220%200%20100%20100%22%3E%20%3Cfilter%20id%3D%22n%22%3E%20%3CfeTurbulence%20type%3D%22turbulence%22%20baseFrequency%3D%221.4%22%20numOctaves%3D%221%22%20seed%3D%222%22%20stitchTiles%3D%22stitch%22%20result%3D%22n%22%20%2F%3E%20%3CfeComponentTransfer%20result%3D%22g%22%3E%20%3CfeFuncR%20type%3D%22linear%22%20slope%3D%224%22%20intercept%3D%221%22%20%2F%3E%20%3CfeFuncG%20type%3D%22linear%22%20slope%3D%224%22%20intercept%3D%221%22%20%2F%3E%20%3CfeFuncB%20type%3D%22linear%22%20slope%3D%224%22%20intercept%3D%221%22%20%2F%3E%20%3C%2FfeComponentTransfer%3E%20%3CfeColorMatrix%20type%3D%22saturate%22%20values%3D%220%22%20in%3D%22g%22%20%2F%3E%20%3C%2Ffilter%3E%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23n)%22%20%2F%3E%20%3C%2Fsvg%3E%20&quot;);
+                                            "
+                                        ></div>
+                                        <div class="relative">
+                                            <div
+                                                class="relative [--padding:min(10%,--spacing(16))] pt-(--padding) pr-(--padding)"
+                                            >
+                                                <div class="*:relative *:ring-1 *:ring-black/10 *:rounded-tr-sm">
+                                                    <img
+                                                        src="/static/investigation-light-736.webp"
+                                                        alt=""
+                                                        class="bg-white/75 sm:hidden dark:hidden"
+                                                        width="1312"
+                                                        height="736"
+                                                    />
+                                                    <img
+                                                        src="/static/investigation-dark-736.webp"
+                                                        alt=""
+                                                        class="bg-black/75 not-dark:hidden sm:hidden"
+                                                        width="1312"
+                                                        height="736"
+                                                    />
+                                                    <img
+                                                        src="/static/investigation-light-680.webp"
+                                                        alt=""
+                                                        class="bg-white/75 max-sm:hidden lg:hidden dark:hidden"
+                                                        width="1312"
+                                                        height="680"
+                                                    />
+                                                    <img
+                                                        src="/static/investigation-dark-680.webp"
+                                                        alt=""
+                                                        class="bg-black/75 not-dark:hidden max-sm:hidden lg:hidden"
+                                                        width="1312"
+                                                        height="680"
+                                                    />
+                                                    <img
+                                                        src="/static/investigation-light-1240.webp"
+                                                        alt=""
+                                                        class="bg-white/75 max-lg:hidden dark:hidden"
+                                                        width="1312"
+                                                        height="1240"
+                                                    />
+                                                    <img
+                                                        src="/static/investigation-dark-1240.webp"
+                                                        alt=""
+                                                        class="bg-black/75 not-dark:hidden max-lg:hidden"
+                                                        width="1312"
+                                                        height="1240"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="group grid grid-flow-dense grid-cols-1 gap-2 rounded-lg bg-olive-950/2.5 p-2 lg:grid-cols-2 dark:bg-white/5"
+                            >
+                                <div
+                                    class="flex flex-col justify-between gap-6 p-6 sm:gap-10 sm:p-10 lg:p-6 lg:group-even:col-start-2"
+                                >
+                                    <div class="text-xl/8 sm:text-2xl/9">
+                                        <h3 class="text-olive-950 dark:text-white">
+                                            Answers and next steps are delivered.
+                                        </h3>
+                                        <div class="flex flex-col gap-4 text-olive-500">
+                                            <p>
+                                                Clear root cause analysis, impact, and recommended actions are delivered
+                                                directly in Slack, Teams, or your incident channel. Your team knows
+                                                exactly what to do next.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="relative overflow-hidden rounded-sm lg:group-even:col-start-1 dark:after:absolute dark:after:inset-0 dark:after:rounded-sm dark:after:outline-1 dark:after:-outline-offset-1 dark:after:outline-white/10"
+                                >
+                                    <div
+                                        class="relative overflow-hidden bg-linear-to-b from-[#8d7359] to-[#765959] dark:from-[#382d23] dark:to-[#3d2323]"
+                                    >
+                                        <div
+                                            class="absolute inset-0 opacity-30 mix-blend-overlay dark:opacity-25"
+                                            style="
+                                                background-position: center;
+                                                background-image: url(&quot;data:image/svg+xml;charset=utf-8,%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22250%22%20height%3D%22250%22%20viewBox%3D%220%200%20100%20100%22%3E%20%3Cfilter%20id%3D%22n%22%3E%20%3CfeTurbulence%20type%3D%22turbulence%22%20baseFrequency%3D%221.4%22%20numOctaves%3D%221%22%20seed%3D%222%22%20stitchTiles%3D%22stitch%22%20result%3D%22n%22%20%2F%3E%20%3CfeComponentTransfer%20result%3D%22g%22%3E%20%3CfeFuncR%20type%3D%22linear%22%20slope%3D%224%22%20intercept%3D%221%22%20%2F%3E%20%3CfeFuncG%20type%3D%22linear%22%20slope%3D%224%22%20intercept%3D%221%22%20%2F%3E%20%3CfeFuncB%20type%3D%22linear%22%20slope%3D%224%22%20intercept%3D%221%22%20%2F%3E%20%3C%2FfeComponentTransfer%3E%20%3CfeColorMatrix%20type%3D%22saturate%22%20values%3D%220%22%20in%3D%22g%22%20%2F%3E%20%3C%2Ffilter%3E%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23n)%22%20%2F%3E%20%3C%2Fsvg%3E%20&quot;);
+                                            "
+                                        ></div>
+                                        <div class="relative">
+                                            <div
+                                                class="relative [--padding:min(10%,--spacing(16))] pr-(--padding) pb-(--padding)"
+                                            >
+                                                <div class="*:relative *:ring-1 *:ring-black/10 *:rounded-br-sm">
+                                                    <img
+                                                        src="/static/resolution-light-736.webp"
+                                                        alt=""
+                                                        class="bg-white/75 sm:hidden dark:hidden"
+                                                        width="1312"
+                                                        height="736"
+                                                    />
+                                                    <img
+                                                        src="/static/resolution-dark-736.webp"
+                                                        alt=""
+                                                        class="bg-black/75 not-dark:hidden sm:hidden"
+                                                        width="1312"
+                                                        height="736"
+                                                    />
+                                                    <img
+                                                        src="/static/resolution-light-680.webp"
+                                                        alt=""
+                                                        class="bg-white/75 max-sm:hidden lg:hidden dark:hidden"
+                                                        width="1312"
+                                                        height="680"
+                                                    />
+                                                    <img
+                                                        src="/static/resolution-dark-680.webp"
+                                                        alt=""
+                                                        class="bg-black/75 not-dark:hidden max-sm:hidden lg:hidden"
+                                                        width="1312"
+                                                        height="680"
+                                                    />
+                                                    <img
+                                                        src="/static/resolution-light-1240.webp"
+                                                        alt=""
+                                                        class="bg-white/75 max-lg:hidden dark:hidden"
+                                                        width="1312"
+                                                        height="1240"
+                                                    />
+                                                    <img
+                                                        src="/static/resolution-dark-1240.webp"
+                                                        alt=""
+                                                        class="bg-black/75 not-dark:hidden max-lg:hidden"
+                                                        width="1312"
+                                                        height="1240"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="py-16" id="features">
+                <div
+                    class="mx-auto w-full max-w-2xl px-6 md:max-w-3xl lg:max-w-7xl lg:px-10 flex flex-col gap-10 sm:gap-16"
+                >
+                    <div class="flex max-w-2xl flex-col gap-6">
+                        <div class="flex flex-col gap-2">
+                            <h2
+                                class="font-display text-[2rem]/10 tracking-tight text-pretty text-olive-950 sm:text-5xl/14 dark:text-white"
+                            >
+                                Built for real on-call incidents.
+                            </h2>
+                        </div>
+                        <div class="text-olive-700 dark:text-olive-400 text-pretty">
+                            <p>
+                                An AI agent that understands your systems, learns from every incident, and delivers
+                                answers where your team already works.
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+                            <div class="flex flex-col gap-2 text-sm/7">
+                                <div class="flex items-start gap-3 text-olive-950 dark:text-white">
+                                    <div class="flex size-3.25 h-lh items-center">
+                                        <svg
+                                            width="13"
+                                            height="13"
+                                            viewbox="0 0 13 13"
+                                            fill="none"
+                                            stroke-width="1"
+                                            role="image"
+                                            class="inline-block"
+                                        >
+                                            <path
+                                                d="M6.5 12.5L0.5 9.5L3.5 8L0.5 6.5L3.5 5L6.5 6.5L9.5 5L12.5 6.5L9.5 8L12.5 9.5L6.5 12.5Z"
+                                                fill="currentColor"
+                                                fill-opacity="0.2"
+                                            ></path>
+                                            <path
+                                                d="M0.5 3.5L6.5 0.5L12.5 3.5L6.5 6.5L0.5 3.5Z"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                            <path
+                                                d="M3.5 5L0.5 6.5L6.5 9.5L12.5 6.5L9.5 5"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                            <path
+                                                d="M3.5 8L0.5 9.5L6.5 12.5L12.5 9.5L9.5 8"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="font-semibold">End-to-end incident intelligence</h3>
+                                </div>
+                                <div class="flex flex-col gap-4 text-olive-700 dark:text-olive-400">
+                                    <p>
+                                        Automatically gathers logs, metrics, alerts, and deploy data as soon as an
+                                        incident starts, so engineers never begin from a blank slate.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-2 text-sm/7">
+                                <div class="flex items-start gap-3 text-olive-950 dark:text-white">
+                                    <div class="flex size-3.25 h-lh items-center">
+                                        <svg
+                                            width="13"
+                                            height="13"
+                                            viewbox="0 0 13 13"
+                                            fill="none"
+                                            stroke-width="1"
+                                            role="image"
+                                            class="inline-block"
+                                        >
+                                            <path
+                                                d="M9.03553 9.03553L12.5 12.5"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                            <path
+                                                d="M10.5 5.5C10.5 8.26142 8.26142 10.5 5.5 10.5C2.73858 10.5 0.5 8.26142 0.5 5.5C0.5 2.73858 2.73858 0.5 5.5 0.5C8.26142 0.5 10.5 2.73858 10.5 5.5Z"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="font-semibold">Automated root cause analysis</h3>
+                                </div>
+                                <div class="flex flex-col gap-4 text-olive-700 dark:text-olive-400">
+                                    <p>
+                                        Analyzes and correlates signals across your stack to identify the most likely
+                                        root cause and explain how the incident unfolded.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-2 text-sm/7">
+                                <div class="flex items-start gap-3 text-olive-950 dark:text-white">
+                                    <div class="flex size-3.25 h-lh items-center">
+                                        <svg
+                                            width="13"
+                                            height="13"
+                                            viewbox="0 0 13 13"
+                                            fill="none"
+                                            stroke-width="1"
+                                            role="image"
+                                            class="inline-block"
+                                        >
+                                            <path
+                                                d="M0.5 1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H11.5C12.0523 0.5 12.5 0.947715 12.5 1.5V8.5C12.5 9.05228 12.0523 9.5 11.5 9.5H7.5L4.5 12.5V9.5H1.5C0.947715 9.5 0.5 9.05228 0.5 8.5V1.5Z"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                            <path
+                                                d="M4.5 5L4.5 5.01"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                            ></path>
+                                            <path
+                                                d="M6.5 5L6.5 5.01"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                            ></path>
+                                            <path
+                                                d="M8.5 5L8.5 5.01"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                            ></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="font-semibold">In-workflow answers and actions</h3>
+                                </div>
+                                <div class="flex flex-col gap-4 text-olive-700 dark:text-olive-400">
+                                    <p>
+                                        Delivers clear answers, impact, and recommended next steps directly in Slack,
+                                        Teams, or your incident channel.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-2 text-sm/7">
+                                <div class="flex items-start gap-3 text-olive-950 dark:text-white">
+                                    <div class="flex size-3.25 h-lh items-center">
+                                        <svg
+                                            width="13"
+                                            height="13"
+                                            viewbox="0 0 13 13"
+                                            fill="none"
+                                            stroke-width="1"
+                                            role="image"
+                                            class="inline-block"
+                                        >
+                                            <path
+                                                d="M0.5 2.5H7.5C9.15685 2.5 10.5 3.84315 10.5 5.5"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                            <path
+                                                d="M12.5 10.5H5.5C3.84315 10.5 2.5 9.15685 2.5 7.5"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                            <path
+                                                d="M2.5 0.5L0.5 2.5L2.5 4.5"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                            <path
+                                                d="M10.5 12.5L12.5 10.5L10.5 8.5"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="font-semibold">Continuously learning</h3>
+                                </div>
+                                <div class="flex flex-col gap-4 text-olive-700 dark:text-olive-400">
+                                    <p>
+                                        Learns from every incident, resolution, and change to improve accuracy and
+                                        recommendations over time.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-2 text-sm/7">
+                                <div class="flex items-start gap-3 text-olive-950 dark:text-white">
+                                    <div class="flex size-3.25 h-lh items-center">
+                                        <svg
+                                            width="13"
+                                            height="13"
+                                            viewbox="0 0 13 13"
+                                            fill="none"
+                                            stroke-width="1"
+                                            role="image"
+                                            class="inline-block"
+                                        >
+                                            <path
+                                                d="M1.5 2.5C1.5 1.94772 1.94772 1.5 2.5 1.5H10.5C11.0523 1.5 11.5 1.94772 11.5 2.5V10.5C11.5 11.0523 11.0523 11.5 10.5 11.5H2.5C1.94772 11.5 1.5 11.0523 1.5 10.5V2.5Z"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                            <path
+                                                d="M3.5 3.5H9.5V9.5H3.5V3.5Z"
+                                                fill="currentColor"
+                                                fillopacity="0.2"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                            <path
+                                                d="M6.5 0.5V1.5"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                            <path
+                                                d="M12.5 6.5L11.5 6.5"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                            <path
+                                                d="M6.5 11.5V12.5"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                            <path
+                                                d="M1.5 6.5L0.5 6.5"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                            <path
+                                                d="M8.5 0.5V1.5"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                            <path
+                                                d="M12.5 8.5L11.5 8.5"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                            <path
+                                                d="M8.5 11.5V12.5"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                            <path
+                                                d="M1.5 8.5L0.5 8.5"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                            <path
+                                                d="M4.5 0.5V1.5"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                            <path
+                                                d="M12.5 4.5L11.5 4.5"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                            <path
+                                                d="M4.5 11.5V12.5"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                            <path
+                                                d="M1.5 4.5L0.5 4.5"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="font-semibold">System-aware by design</h3>
+                                </div>
+                                <div class="flex flex-col gap-4 text-olive-700 dark:text-olive-400">
+                                    <p>
+                                        Builds an understanding of your services, dependencies, and deployment patterns
+                                        so responses are grounded in your real architecture.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-2 text-sm/7">
+                                <div class="flex items-start gap-3 text-olive-950 dark:text-white">
+                                    <div class="flex size-3.25 h-lh items-center">
+                                        <svg
+                                            width="13"
+                                            height="13"
+                                            viewbox="0 0 13 13"
+                                            fill="none"
+                                            stroke-width="1"
+                                            role="image"
+                                            class="inline-block"
+                                        >
+                                            <path
+                                                d="M.5 1.5h7m-7 4h3m-3 4h7m2-8h3m-7 4h7m-3 4h3"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                            <path
+                                                d="M9.5 1.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm-4 4a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm4 4a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"
+                                                fill="currentColor"
+                                                fillopacity=".2"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="font-semibold">Adapts to your team &#39;s practices</h3>
+                                </div>
+                                <div class="flex flex-col gap-4 text-olive-700 dark:text-olive-400">
+                                    <p>
+                                        Observes how your team responds to incidents and aligns recommendations with
+                                        your workflows, tools, and operational standards.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="py-16" id="why-us">
+                <div class="mx-auto w-full max-w-2xl px-6 md:max-w-3xl lg:max-w-7xl lg:px-10">
+                    <div class="relative flex flex-col gap-10 sm:gap-16">
+                        <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                            <h2
+                                class="font-display text-[2rem]/10 tracking-tight text-pretty text-olive-950 sm:text-5xl/14 dark:text-white"
+                            >
+                                Measurable impact on incident response.
+                            </h2>
+                            <div class="flex max-w-xl flex-col gap-4 text-base/7 text-olive-700 dark:text-olive-400">
+                                <p>
+                                    Incident response breaks down when engineers are forced to jump between tools,
+                                    manually reconstruct timelines, and make decisions with incomplete information.
+                                    Every alert turns into a scramble for context, slowing resolution and increasing
+                                    on-call fatigue.
+                                </p>
+                                <p>
+                                    Our AI on-call engineer changes that by automatically gathering signals, correlating
+                                    them into a clear explanation, and delivering answers and next steps directly inside
+                                    your existing workflow. Teams resolve incidents faster, spend less time on
+                                    repetitive investigation, and build operational knowledge that reduces repeat
+                                    failures over time.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 gap-2 md:grid-cols-3">
+                            <div class="rounded-xl bg-olive-950/2.5 p-6 dark:bg-white/5">
+                                <div class="text-2xl/10 tracking-tight text-olive-950 dark:text-white">30–50%</div>
+                                <p class="mt-2 text-sm/7 text-olive-700 dark:text-olive-400">
+                                    Reduction in incident resolution time.
+                                </p>
+                            </div>
+                            <div class="rounded-xl bg-olive-950/2.5 p-6 dark:bg-white/5">
+                                <div class="text-2xl/10 tracking-tight text-olive-950 dark:text-white">5-10 hours</div>
+                                <p class="mt-2 text-sm/7 text-olive-700 dark:text-olive-400">
+                                    Saved per engineer each week.
+                                </p>
+                            </div>
+                            <div class="rounded-xl bg-olive-950/2.5 p-6 dark:bg-white/5">
+                                <div class="text-2xl/10 tracking-tight text-olive-950 dark:text-white">20-40%</div>
+                                <p class="mt-2 text-sm/7 text-olive-700 dark:text-olive-400">
+                                    Reduction in repeat incidents.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="py-16" id="faqs">
+                <div
+                    class="mx-auto w-full max-w-2xl px-6 md:max-w-3xl lg:max-w-7xl lg:px-10 grid grid-cols-1 gap-x-2 gap-y-8 lg:grid-cols-2"
+                >
+                    <div class="flex flex-col gap-6">
+                        <h2
+                            class="font-display text-[2rem]/10 tracking-tight text-pretty text-olive-950 sm:text-5xl/14 dark:text-white"
+                        >
+                            Questions &amp;Answers
+                        </h2>
+                    </div>
+                    <div
+                        class="divide-y divide-olive-950/10 border-y border-olive-950/10 dark:divide-white/10 dark:border-white/10"
+                    >
+                        <div id="faq-1">
+                            <button
+                                type="button"
+                                id="faq-1-question"
+                                command="--toggle"
+                                commandfor="faq-1-answer"
+                                class="flex w-full items-start justify-between gap-6 py-4 text-left text-base/7 text-olive-950 dark:text-white"
+                            >
+                                How is this different from existing observability tools?
+                                <svg
+                                    width="13"
+                                    height="13"
+                                    viewbox="0 0 13 13"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1"
+                                    role="image"
+                                    class="inline-block h-lh in-aria-expanded:hidden"
+                                >
+                                    <path d="M6.5 0.5V12.5" stroke-linecap="round" stroke-inejoin="round"></path>
+                                    <path
+                                        d="M12.5049 6.49512L0.504883 6.49512"
+                                        stroke-linecap="round"
+                                        stroke-inejoin="round"
+                                    ></path>
+                                </svg>
+                                <svg
+                                    width="13"
+                                    height="1"
+                                    viewbox="0 0 13 1"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1"
+                                    role="image"
+                                    class="inline-block h-lh not-in-aria-expanded:hidden"
+                                >
+                                    <path
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-inejoin="round"
+                                        d="M12.505.5h-12"
+                                    ></path>
+                                </svg>
+                            </button>
+                            <el-disclosure
+                                id="faq-1-answer"
+                                hidden
+                                class="-mt-2 flex flex-col gap-2 pr-12 pb-4 text-sm/7 text-olive-700 dark:text-olive-400"
+                                >Observability tools collect and visualize data. Our AI on-call engineer goes a step
+                                further by automatically analyzing that data, reconstructing the incident, identifying
+                                the root cause, and delivering clear answers and next steps directly in your
+                                workflow.</el-disclosure
+                            >
+                        </div>
+                        <div id="faq-2">
+                            <button
+                                type="button"
+                                id="faq-2-question"
+                                command="--toggle"
+                                commandfor="faq-2-answer"
+                                class="flex w-full items-start justify-between gap-6 py-4 text-left text-base/7 text-olive-950 dark:text-white"
+                            >
+                                Does this replace our on-call engineers?
+                                <svg
+                                    width="13"
+                                    height="13"
+                                    viewbox="0 0 13 13"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1"
+                                    role="image"
+                                    class="inline-block h-lh in-aria-expanded:hidden"
+                                >
+                                    <path d="M6.5 0.5V12.5" stroke-linecap="round" stroke-inejoin="round"></path>
+                                    <path
+                                        d="M12.5049 6.49512L0.504883 6.49512"
+                                        stroke-linecap="round"
+                                        stroke-inejoin="round"
+                                    ></path>
+                                </svg>
+                                <svg
+                                    width="13"
+                                    height="1"
+                                    viewbox="0 0 13 1"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1"
+                                    role="image"
+                                    class="inline-block h-lh not-in-aria-expanded:hidden"
+                                >
+                                    <path
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-inejoin="round"
+                                        d="M12.505.5h-12"
+                                    ></path>
+                                </svg>
+                            </button>
+                            <el-disclosure
+                                id="faq-2-answer"
+                                hidden
+                                class="-mt-2 flex flex-col gap-2 pr-12 pb-4 text-sm/7 text-olive-700 dark:text-olive-400"
+                                >No. It acts as an AI teammate that removes manual investigation and repetitive
+                                analysis, so engineers can focus on decision-making and fixing the issue
+                                faster.</el-disclosure
+                            >
+                        </div>
+                        <div id="faq-3">
+                            <button
+                                type="button"
+                                id="faq-3-question"
+                                command="--toggle"
+                                commandfor="faq-3-answer"
+                                class="flex w-full items-start justify-between gap-6 py-4 text-left text-base/7 text-olive-950 dark:text-white"
+                            >
+                                Which tools do you integrate with?
+                                <svg
+                                    width="13"
+                                    height="13"
+                                    viewbox="0 0 13 13"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1"
+                                    role="image"
+                                    class="inline-block h-lh in-aria-expanded:hidden"
+                                >
+                                    <path d="M6.5 0.5V12.5" stroke-linecap="round" stroke-inejoin="round"></path>
+                                    <path
+                                        d="M12.5049 6.49512L0.504883 6.49512"
+                                        stroke-linecap="round"
+                                        stroke-inejoin="round"
+                                    ></path>
+                                </svg>
+                                <svg
+                                    width="13"
+                                    height="1"
+                                    viewbox="0 0 13 1"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1"
+                                    role="image"
+                                    class="inline-block h-lh not-in-aria-expanded:hidden"
+                                >
+                                    <path
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-inejoin="round"
+                                        d="M12.505.5h-12"
+                                    ></path>
+                                </svg>
+                            </button>
+                            <el-disclosure
+                                id="faq-3-answer"
+                                hidden
+                                class="-mt-2 flex flex-col gap-2 pr-12 pb-4 text-sm/7 text-olive-700 dark:text-olive-400"
+                                >We integrate with common logging, metrics, alerting, CI/CD, and communication tools.
+                                The AI pulls signals from your existing stack and delivers insights where your team
+                                already works.</el-disclosure
+                            >
+                        </div>
+                        <div id="faq-4">
+                            <button
+                                type="button"
+                                id="faq-4-question"
+                                command="--toggle"
+                                commandfor="faq-4-answer"
+                                class="flex w-full items-start justify-between gap-6 py-4 text-left text-base/7 text-olive-950 dark:text-white"
+                            >
+                                How does the AI learn and improve over time?
+                                <svg
+                                    width="13"
+                                    height="13"
+                                    viewbox="0 0 13 13"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1"
+                                    role="image"
+                                    class="inline-block h-lh in-aria-expanded:hidden"
+                                >
+                                    <path d="M6.5 0.5V12.5" stroke-linecap="round" stroke-inejoin="round"></path>
+                                    <path
+                                        d="M12.5049 6.49512L0.504883 6.49512"
+                                        stroke-linecap="round"
+                                        stroke-inejoin="round"
+                                    ></path>
+                                </svg>
+                                <svg
+                                    width="13"
+                                    height="1"
+                                    viewbox="0 0 13 1"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1"
+                                    role="image"
+                                    class="inline-block h-lh not-in-aria-expanded:hidden"
+                                >
+                                    <path
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-inejoin="round"
+                                        d="M12.505.5h-12"
+                                    ></path>
+                                </svg>
+                            </button>
+                            <el-disclosure
+                                id="faq-4-answer"
+                                hidden
+                                class="-mt-2 flex flex-col gap-2 pr-12 pb-4 text-sm/7 text-olive-700 dark:text-olive-400"
+                                >The AI learns from past incidents, resolutions, and changes in your systems. As your
+                                team responds to incidents, it continuously improves accuracy and recommendations while
+                                adapting to your architecture and workflows.</el-disclosure
+                            >
+                        </div>
+                        <div id="faq-5">
+                            <button
+                                type="button"
+                                id="faq-5-question"
+                                command="--toggle"
+                                commandfor="faq-5-answer"
+                                class="flex w-full items-start justify-between gap-6 py-4 text-left text-base/7 text-olive-950 dark:text-white"
+                            >
+                                Is our data secure?
+                                <svg
+                                    width="13"
+                                    height="13"
+                                    viewbox="0 0 13 13"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1"
+                                    role="image"
+                                    class="inline-block h-lh in-aria-expanded:hidden"
+                                >
+                                    <path d="M6.5 0.5V12.5" stroke-linecap="round" stroke-inejoin="round"></path>
+                                    <path
+                                        d="M12.5049 6.49512L0.504883 6.49512"
+                                        stroke-linecap="round"
+                                        stroke-inejoin="round"
+                                    ></path>
+                                </svg>
+                                <svg
+                                    width="13"
+                                    height="1"
+                                    viewbox="0 0 13 1"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1"
+                                    role="image"
+                                    class="inline-block h-lh not-in-aria-expanded:hidden"
+                                >
+                                    <path
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-inejoin="round"
+                                        d="M12.505.5h-12"
+                                    ></path>
+                                </svg>
+                            </button>
+                            <el-disclosure
+                                id="faq-5-answer"
+                                hidden
+                                class="-mt-2 flex flex-col gap-2 pr-12 pb-4 text-sm/7 text-olive-700 dark:text-olive-400"
+                                >Yes. We follow strict security and data isolation practices. Your data is used only to
+                                analyze incidents within your environment and is never shared across
+                                customers.</el-disclosure
+                            >
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="py-16">
+                <div class="mx-auto w-full max-w-2xl px-6 md:max-w-3xl lg:max-w-7xl lg:px-10 flex flex-col gap-10">
+                    <div class="flex flex-col gap-6">
+                        <div class="flex max-w-4xl flex-col gap-2">
+                            <h2
+                                class="font-display text-[2rem]/10 tracking-tight text-pretty text-olive-950 sm:text-5xl/14 dark:text-white"
+                            >
+                                Be ready for the next incident.
+                            </h2>
+                        </div>
+                        <div class="text-olive-700 dark:text-olive-400 flex max-w-3xl flex-col gap-4 text-pretty">
+                            <p>
+                                Join early access and see how an AI on-call engineer helps your team resolve incidents
+                                faster, reduce on-call load, and prevent repeat issues.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <form
+                            action="https://docs.google.com/forms/d/e/1FAIpQLSejxi-URdn5o_kE7R1vqSHTi49nu_jPaM_ahkZAhtKifdUDMw/formResponse"
+                            method="POST"
+                            target="hiddenIframe"
+                            class="flex rounded-full p-1 inset-ring-1 dark:bg-white/10 dark:inset-ring-white/10 bg-white inset-ring-black/10"
+                            onsubmit="setTimeout(() => this.reset(), 500)"
+                        >
+                            <input
+                                name="entry.1343145133"
+                                class="min-w-0 flex-1 px-3 text-sm/7 focus:outline-hidden dark:text-white text-olive-950"
+                                type="email"
+                                aria-label="Email address"
+                                placeholder="Enter your email"
+                                autocomplete="email"
+                                required
+                            />
+                            <button
+                                type="submit"
+                                class="inline-flex shrink-0 items-center justify-center gap-1 rounded-full text-sm/7 font-medium bg-olive-950 text-white hover:bg-olive-800 dark:bg-olive-300 dark:text-olive-950 dark:hover:bg-olive-200 px-3 py-1"
+                            >
+                                Request invite
+                                <svg
+                                    width="13"
+                                    height="7"
+                                    viewbox="0 0 13 7"
+                                    fill="none"
+                                    stroke-width="1"
+                                    role="image"
+                                    class="inline-block"
+                                >
+                                    <path
+                                        d="M12.5049 3.49512L0.504883 3.49512"
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    ></path>
+                                    <path
+                                        d="M9.5 6.5L12.5 3.5L9.5 0.5"
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    ></path>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <footer class="pt-16">
+                <div class="bg-olive-950/2.5 py-16 text-olive-950 dark:bg-white/5 dark:text-white">
+                    <div
+                        class="mx-auto w-full max-w-2xl px-6 md:max-w-3xl lg:max-w-7xl lg:px-10 flex flex-col gap-10 text-center text-sm/7"
+                    >
+                        <div class="flex flex-col gap-6">
+                            <nav>
+                                <ul class="flex flex-wrap items-center justify-center gap-x-10 gap-y-2">
+                                    <li class="text-olive-700 dark:text-olive-400">
+                                        <a href="/privacy-policy" hx-boost="true">Privacy policy</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div class="flex items-center justify-center gap-10">
+                                <a
+                                    href="https://github.com/tailcode-ai"
+                                    target="_blank"
+                                    aria-label="GitHub"
+                                    class="text-olive-950 *:size-6 dark:text-white"
+                                >
+                                    <svg
+                                        width="24"
+                                        height="24"
+                                        viewbox="0 0 24 24"
+                                        fill="currentColor"
+                                        role="image"
+                                        class="inline-block"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                            clip-rule="evenodd"
+                                        ></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="text-olive-600 dark:text-olive-500">© 2026 tailcode.ai</div>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </body>
+</html>

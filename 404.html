@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="title" content="tailcode.ai" />
+        <meta name="description" content="Your AI on-call engineer for incident resolution." />
+        <title>tailcode.ai</title>
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://localhost:3000" />
+        <meta property="og:title" content="tailcode.ai" />
+        <meta property="og:description" content="Your AI on-call engineer for incident resolution." />
+        <meta property="og:image" content="http://localhost:3000/static/og-image.png" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="http://localhost:3000" />
+        <meta property="twitter:title" content="tailcode.ai" />
+        <meta property="twitter:description" content="Your AI on-call engineer for incident resolution." />
+        <meta property="twitter:image" content="http://localhost:3000/static/og-image.png" />
+        <link rel="stylesheet" href="/static/styles.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;display=swap"
+        />
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+        <script src="/static/tailwind-elements.js" type="module" defer></script>
+        <script src="/static/htmx.js" defer></script>
+    </head>
+    <body id="body">
+        <header class="sticky top-0 z-10 bg-olive-100 dark:bg-olive-950" id="navbar">
+            <style>
+                :root {
+                    --scroll-padding-top: 5.25rem;
+                }
+            </style>
+            <nav>
+                <div class="mx-auto flex h-(--scroll-padding-top) max-w-7xl items-center gap-4 px-6 lg:px-10">
+                    <div class="flex flex-1 items-center">
+                        <a
+                            href="/"
+                            class="inline-flex items-stretch font-display text-2xl text-olive-950 dark:text-white"
+                            hx-boost="true"
+                            >tailcode.ai</a
+                        >
+                    </div>
+                    <div class="flex gap-8 max-lg:hidden">
+                        <a
+                            href="/home#how-it-works"
+                            class="group inline-flex items-center justify-between gap-2 text-3xl/10 font-medium text-olive-950 lg:text-sm/7 dark:text-white"
+                            hx-boost="true"
+                        >
+                            How it works?
+                            <span
+                                class="inline-flex p-1.5 opacity-0 group-hover:opacity-100 lg:hidden"
+                                aria-hidden="true"
+                            >
+                                <svg
+                                    fill="none"
+                                    viewbox="0 0 24 24"
+                                    stroke-width="1.5"
+                                    stroke="currentColor"
+                                    class="size-6"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                                    ></path>
+                                </svg>
+                            </span>
+                        </a>
+                        <a
+                            href="/home#features"
+                            class="group inline-flex items-center justify-between gap-2 text-3xl/10 font-medium text-olive-950 lg:text-sm/7 dark:text-white"
+                            hx-boost="true"
+                        >
+                            Features
+                            <span
+                                class="inline-flex p-1.5 opacity-0 group-hover:opacity-100 lg:hidden"
+                                aria-hidden="true"
+                            >
+                                <svg
+                                    fill="none"
+                                    viewbox="0 0 24 24"
+                                    stroke-width="1.5"
+                                    stroke="currentColor"
+                                    class="size-6"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                                    ></path>
+                                </svg>
+                            </span>
+                        </a>
+                        <a
+                            href="/home#why-us"
+                            class="group inline-flex items-center justify-between gap-2 text-3xl/10 font-medium text-olive-950 lg:text-sm/7 dark:text-white"
+                            hx-boost="true"
+                        >
+                            Why us?
+                            <span
+                                class="inline-flex p-1.5 opacity-0 group-hover:opacity-100 lg:hidden"
+                                aria-hidden="true"
+                            >
+                                <svg
+                                    fill="none"
+                                    viewbox="0 0 24 24"
+                                    stroke-width="1.5"
+                                    stroke="currentColor"
+                                    class="size-6"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                                    ></path>
+                                </svg>
+                            </span>
+                        </a>
+                        <a
+                            href="/home#faqs"
+                            class="group inline-flex items-center justify-between gap-2 text-3xl/10 font-medium text-olive-950 lg:text-sm/7 dark:text-white"
+                            hx-boost="true"
+                        >
+                            FAQs
+                            <span
+                                class="inline-flex p-1.5 opacity-0 group-hover:opacity-100 lg:hidden"
+                                aria-hidden="true"
+                            >
+                                <svg
+                                    fill="none"
+                                    viewbox="0 0 24 24"
+                                    stroke-width="1.5"
+                                    stroke="currentColor"
+                                    class="size-6"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                                    ></path>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="flex flex-1 items-center justify-end gap-4">
+                        <div class="flex shrink-0 items-center gap-5"></div>
+                        <button
+                            command="show-modal"
+                            commandfor="mobile-menu"
+                            aria-label="Toggle menu"
+                            class="inline-flex rounded-full p-1.5 text-olive-950 hover:bg-olive-950/10 lg:hidden dark:text-white dark:hover:bg-white/10"
+                        >
+                            <svg viewbox="0 0 24 24" fill="currentColor" class="size-6">
+                                <path
+                                    fillrule="evenodd"
+                                    d="M3.748 8.248a.75.75 0 0 1 .75-.75h15a.75.75 0 0 1 0 1.5h-15a.75.75 0 0 1-.75-.75ZM3.748 15.75a.75.75 0 0 1 .75-.751h15a.75.75 0 0 1 0 1.5h-15a.75.75 0 0 1-.75-.75Z"
+                                    cliprule="evenodd"
+                                ></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <el-dialog id="mobile-menu-dialog" class="lg:hidden">
+                    <dialog id="mobile-menu" class="backdrop:bg-transparent">
+                        <el-dialog-panel class="fixed inset-0 bg-olive-100 px-6 py-6 lg:px-10 dark:bg-olive-950">
+                            <div class="flex justify-end">
+                                <button
+                                    command="close"
+                                    commandfor="mobile-menu"
+                                    aria-label="Toggle menu"
+                                    class="inline-flex rounded-full p-1.5 text-olive-950 hover:bg-olive-950/10 dark:text-white dark:hover:bg-white/10"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewbox="0 0 24 24"
+                                        stroke-width="1.5"
+                                        stroke="currentColor"
+                                        class="size-6"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M6 18 18 6M6 6l12 12"
+                                        ></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="mt-6 flex flex-col gap-6">
+                                <a
+                                    href="/home#how-it-works"
+                                    onclick="document.getElementById(&#39;mobile-menu-dialog&#39;).hide()"
+                                    class="group inline-flex items-center justify-between gap-2 text-3xl/10 font-medium text-olive-950 lg:text-sm/7 dark:text-white"
+                                    hx-boost="true"
+                                >
+                                    How it works?
+                                    <span
+                                        class="inline-flex p-1.5 opacity-0 group-hover:opacity-100 lg:hidden"
+                                        aria-hidden="true"
+                                    >
+                                        <svg
+                                            fill="none"
+                                            viewbox="0 0 24 24"
+                                            stroke-width="1.5"
+                                            stroke="currentColor"
+                                            class="size-6"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                                            ></path>
+                                        </svg>
+                                    </span>
+                                </a>
+                                <a
+                                    href="/home#features"
+                                    onclick="document.getElementById(&#39;mobile-menu-dialog&#39;).hide()"
+                                    class="group inline-flex items-center justify-between gap-2 text-3xl/10 font-medium text-olive-950 lg:text-sm/7 dark:text-white"
+                                    hx-boost="true"
+                                >
+                                    Features
+                                    <span
+                                        class="inline-flex p-1.5 opacity-0 group-hover:opacity-100 lg:hidden"
+                                        aria-hidden="true"
+                                    >
+                                        <svg
+                                            fill="none"
+                                            viewbox="0 0 24 24"
+                                            stroke-width="1.5"
+                                            stroke="currentColor"
+                                            class="size-6"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                                            ></path>
+                                        </svg>
+                                    </span>
+                                </a>
+                                <a
+                                    href="/home#why-us"
+                                    onclick="document.getElementById(&#39;mobile-menu-dialog&#39;).hide()"
+                                    class="group inline-flex items-center justify-between gap-2 text-3xl/10 font-medium text-olive-950 lg:text-sm/7 dark:text-white"
+                                    hx-boost="true"
+                                >
+                                    Why us?
+                                    <span
+                                        class="inline-flex p-1.5 opacity-0 group-hover:opacity-100 lg:hidden"
+                                        aria-hidden="true"
+                                    >
+                                        <svg
+                                            fill="none"
+                                            viewbox="0 0 24 24"
+                                            stroke-width="1.5"
+                                            stroke="currentColor"
+                                            class="size-6"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                                            ></path>
+                                        </svg>
+                                    </span>
+                                </a>
+                                <a
+                                    href="/home#faqs"
+                                    onclick="document.getElementById(&#39;mobile-menu-dialog&#39;).hide()"
+                                    class="group inline-flex items-center justify-between gap-2 text-3xl/10 font-medium text-olive-950 lg:text-sm/7 dark:text-white"
+                                    hx-boost="true"
+                                >
+                                    FAQs
+                                    <span
+                                        class="inline-flex p-1.5 opacity-0 group-hover:opacity-100 lg:hidden"
+                                        aria-hidden="true"
+                                    >
+                                        <svg
+                                            fill="none"
+                                            viewbox="0 0 24 24"
+                                            stroke-width="1.5"
+                                            stroke="currentColor"
+                                            class="size-6"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                                            ></path>
+                                        </svg>
+                                    </span>
+                                </a>
+                            </div>
+                        </el-dialog-panel>
+                    </dialog>
+                </el-dialog>
+            </nav>
+        </header>
+        <main class="isolate overflow-clip">
+            <section class="py-16">
+                <div
+                    class="mx-auto w-full max-w-2xl px-6 md:max-w-3xl lg:max-w-7xl lg:px-10 flex flex-col items-center gap-6"
+                >
+                    <h1
+                        class="font-display text-5xl/12 tracking-tight text-balance sm:text-[5rem]/20 text-olive-950 dark:text-white max-w-5xl text-center"
+                    >
+                        Page not found.
+                    </h1>
+                    <div class="text-lg/8 text-olive-700 dark:text-olive-400 flex max-w-xl flex-col gap-4 text-center">
+                        <p>Sorry, but the page you were looking for could not be found.</p>
+                    </div>
+                    <a
+                        href="/"
+                        class="inline-flex items-center gap-2 text-sm/7 font-medium text-olive-950 dark:text-white"
+                        hx-boost="true"
+                    >
+                        Go back home
+                        <svg
+                            width="13"
+                            height="7"
+                            viewbox="0 0 13 7"
+                            fill="none"
+                            stroke-width="1"
+                            role="image"
+                            class="inline-block"
+                        >
+                            <path
+                                d="M12.5049 3.49512L0.504883 3.49512"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            ></path>
+                            <path
+                                d="M9.5 6.5L12.5 3.5L9.5 0.5"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            ></path>
+                        </svg>
+                    </a>
+                </div>
+            </section>
+            <footer class="pt-16">
+                <div class="bg-olive-950/2.5 py-16 text-olive-950 dark:bg-white/5 dark:text-white">
+                    <div
+                        class="mx-auto w-full max-w-2xl px-6 md:max-w-3xl lg:max-w-7xl lg:px-10 flex flex-col gap-10 text-center text-sm/7"
+                    >
+                        <div class="flex flex-col gap-6">
+                            <nav>
+                                <ul class="flex flex-wrap items-center justify-center gap-x-10 gap-y-2">
+                                    <li class="text-olive-700 dark:text-olive-400">
+                                        <a href="/privacy-policy" hx-boost="true">Privacy policy</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div class="flex items-center justify-center gap-10">
+                                <a
+                                    href="https://github.com/tailcode-ai"
+                                    target="_blank"
+                                    aria-label="GitHub"
+                                    class="text-olive-950 *:size-6 dark:text-white"
+                                >
+                                    <svg
+                                        width="24"
+                                        height="24"
+                                        viewbox="0 0 24 24"
+                                        fill="currentColor"
+                                        role="image"
+                                        class="inline-block"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                            clip-rule="evenodd"
+                                        ></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="text-olive-600 dark:text-olive-500">© 2026 tailcode.ai</div>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </body>
+</html>
